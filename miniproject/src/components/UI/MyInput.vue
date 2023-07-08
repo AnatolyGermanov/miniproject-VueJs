@@ -1,0 +1,33 @@
+<template>
+  <input
+      class="input"
+      :value="modelValue"
+      @input="updateInput"
+  >
+</template>
+
+<script>
+export default {
+  name: 'my-input',
+
+  props: {
+    modelValue: String
+  },
+  methods: {
+    updateInput(event){
+      this.$emit('update:modelValue', event.target.value)
+    }
+  }
+
+}
+</script>
+
+<style scoped>
+.input {
+  width: 100%;
+  border: 1px solid lightgray;
+  padding: 10px 15px;
+  margin: 5px 0 15px 0;
+}
+
+</style>
